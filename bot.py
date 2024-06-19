@@ -39,7 +39,7 @@ async def gpt_dialog(update, context):
     my_message = await send_text(update, context, "ChatGPT думает. Ожидайте.")
     prompt = load_prompt("gpt")
     text = update.message.text
-    answer = await chatgpt.send_question(prompt, text)
+    answer = await chatgpt.add_message(text)
     await my_message.edit_text(answer)
 
 
